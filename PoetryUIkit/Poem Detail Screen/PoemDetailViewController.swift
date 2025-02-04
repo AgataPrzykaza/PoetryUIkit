@@ -7,24 +7,17 @@
 
 import UIKit
 
-class Poem{
-    
-    let title : String
-    let author : String
-    let text : String
-    
-    init(title: String, author: String, text: String) {
-        self.title = title
-        self.author = author
-        self.text = text
-    }
-}
+
+
+
 
 class PoemDetailViewController: UIViewController {
 
     @IBOutlet var poemTitleLabel: UILabel!
     @IBOutlet var poemAuthorLabel: UILabel!
     @IBOutlet var poemBodyTextView: UITextView!
+    
+    @IBOutlet weak var scrollView: UIScrollView!
     
     var poem : Poem?
     
@@ -36,6 +29,10 @@ class PoemDetailViewController: UIViewController {
         poemBodyTextView.text = poem?.text
         
         // Do any additional setup after loading the view.
+        
+        // Jeśli masz już scrollView
+           scrollView.showsVerticalScrollIndicator = false
+           scrollView.showsHorizontalScrollIndicator = false
         
         navigationController?.navigationBar.prefersLargeTitles = false
             

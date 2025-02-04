@@ -15,6 +15,13 @@
 		FD7DC03B2D4D29B7001E0ED2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD7DC0312D4D29B7001E0ED2 /* Main.storyboard */; };
 		FDB52E552D50D1A50066C121 /* PoemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB52E542D50D1A50066C121 /* PoemCell.swift */; };
 		FDDBBE172D50EF2B00065C65 /* PoemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBBE162D50EF2B00065C65 /* PoemDetailViewController.swift */; };
+		FDDBBE192D50FBC800065C65 /* ServiceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBBE182D50FBC800065C65 /* ServiceAPI.swift */; };
+		FDDBBE1C2D52260800065C65 /* AuthorsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBBE1B2D52260800065C65 /* AuthorsListViewController.swift */; };
+		FDDBBE1E2D5226ED00065C65 /* AuthorsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBBE1D2D5226ED00065C65 /* AuthorsListTableViewCell.swift */; };
+		FDDBBE212D522E3500065C65 /* AuthorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBBE202D522E3500065C65 /* AuthorViewController.swift */; };
+		FDDBBE232D5233E700065C65 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBBE222D5233E700065C65 /* CollectionHeaderView.swift */; };
+		FDDBBE262D52453000065C65 /* WikiSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBBE252D52453000065C65 /* WikiSummary.swift */; };
+		FDDBBE282D52454400065C65 /* Poem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBBE272D52454400065C65 /* Poem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +54,13 @@
 		FD7DC0332D4D29B7001E0ED2 /* PoemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemListViewController.swift; sourceTree = "<group>"; };
 		FDB52E542D50D1A50066C121 /* PoemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemCell.swift; sourceTree = "<group>"; };
 		FDDBBE162D50EF2B00065C65 /* PoemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemDetailViewController.swift; sourceTree = "<group>"; };
+		FDDBBE182D50FBC800065C65 /* ServiceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAPI.swift; sourceTree = "<group>"; };
+		FDDBBE1B2D52260800065C65 /* AuthorsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorsListViewController.swift; sourceTree = "<group>"; };
+		FDDBBE1D2D5226ED00065C65 /* AuthorsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorsListTableViewCell.swift; sourceTree = "<group>"; };
+		FDDBBE202D522E3500065C65 /* AuthorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorViewController.swift; sourceTree = "<group>"; };
+		FDDBBE222D5233E700065C65 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
+		FDDBBE252D52453000065C65 /* WikiSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiSummary.swift; sourceTree = "<group>"; };
+		FDDBBE272D52454400065C65 /* Poem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -110,9 +124,12 @@
 		FD7DC0342D4D29B7001E0ED2 /* PoetryUIkit */ = {
 			isa = PBXGroup;
 			children = (
+				FDDBBE242D52451F00065C65 /* Model */,
 				FD7DC02B2D4D29B7001E0ED2 /* AppDelegate.swift */,
 				FD7DC0322D4D29B7001E0ED2 /* SceneDelegate.swift */,
+				FDDBBE182D50FBC800065C65 /* ServiceAPI.swift */,
 				FD7DC03C2D4D3039001E0ED2 /* Home Screen */,
+				FDDBBE1A2D5225E100065C65 /* Authors List Screen */,
 				FDDBBE152D50EEEF00065C65 /* Poem Detail Screen */,
 				FD7DC0312D4D29B7001E0ED2 /* Main.storyboard */,
 				FD7DC02F2D4D29B7001E0ED2 /* LaunchScreen.storyboard */,
@@ -137,6 +154,34 @@
 				FDDBBE162D50EF2B00065C65 /* PoemDetailViewController.swift */,
 			);
 			path = "Poem Detail Screen";
+			sourceTree = "<group>";
+		};
+		FDDBBE1A2D5225E100065C65 /* Authors List Screen */ = {
+			isa = PBXGroup;
+			children = (
+				FDDBBE1F2D522E0500065C65 /* Author Screen */,
+				FDDBBE1B2D52260800065C65 /* AuthorsListViewController.swift */,
+				FDDBBE1D2D5226ED00065C65 /* AuthorsListTableViewCell.swift */,
+			);
+			path = "Authors List Screen";
+			sourceTree = "<group>";
+		};
+		FDDBBE1F2D522E0500065C65 /* Author Screen */ = {
+			isa = PBXGroup;
+			children = (
+				FDDBBE202D522E3500065C65 /* AuthorViewController.swift */,
+				FDDBBE222D5233E700065C65 /* CollectionHeaderView.swift */,
+			);
+			path = "Author Screen";
+			sourceTree = "<group>";
+		};
+		FDDBBE242D52451F00065C65 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FDDBBE252D52453000065C65 /* WikiSummary.swift */,
+				FDDBBE272D52454400065C65 /* Poem.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,9 +329,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDDBBE172D50EF2B00065C65 /* PoemDetailViewController.swift in Sources */,
+				FDDBBE232D5233E700065C65 /* CollectionHeaderView.swift in Sources */,
+				FDDBBE1C2D52260800065C65 /* AuthorsListViewController.swift in Sources */,
+				FDDBBE262D52453000065C65 /* WikiSummary.swift in Sources */,
 				FD7DC0352D4D29B7001E0ED2 /* AppDelegate.swift in Sources */,
 				FD7DC0362D4D29B7001E0ED2 /* SceneDelegate.swift in Sources */,
 				FDB52E552D50D1A50066C121 /* PoemCell.swift in Sources */,
+				FDDBBE192D50FBC800065C65 /* ServiceAPI.swift in Sources */,
+				FDDBBE212D522E3500065C65 /* AuthorViewController.swift in Sources */,
+				FDDBBE1E2D5226ED00065C65 /* AuthorsListTableViewCell.swift in Sources */,
+				FDDBBE282D52454400065C65 /* Poem.swift in Sources */,
 				FD7DC0372D4D29B7001E0ED2 /* PoemListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

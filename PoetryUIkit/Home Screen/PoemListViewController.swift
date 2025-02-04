@@ -6,24 +6,14 @@
 //
 
 import UIKit
+import Combine
 
 class PoemListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
 
     @IBOutlet var collectionView: UICollectionView!
     
-    let poems = [
-        Poem(title: "Prologue to Mr Addison's Tragedy", author: "Alexander Pope", text: "To wake the soul by tender strokes of art, To raise the genius, and to mend the heart."),
-        Poem(title: "Comus", author: "John Milton", text: "A Masque Presented At Ludlow Castle, 1634. The Lady enters, singing."),
-        Poem(title: "On Napoleon's Escape From Elba", author: "George Gordon, Lord Byron", text: "ONCE fairly set out on his party of pleasure, the Warlord of France bent his steps to the North."),
-        Poem(title: "Fragment From the 'Monk of Atropos'", author: "George Gordon, Lord Byron", text: "Beside the confines of the Ægean main, The land of Destiny, eternal Spain."),
-        Poem(title: "To Autumn", author: "John Keats", text: "Season of mists and mellow fruitfulness, Close bosom-friend of the maturing sun."),
-        Poem(title: "Ozymandias", author: "Percy Bysshe Shelley", text: "I met a traveler from an antique land who said: Two vast and trunkless legs of stone stand in the desert."),
-        Poem(title: "Daffodils", author: "William Wordsworth", text: "I wandered lonely as a cloud that floats on high o'er vales and hills."),
-        Poem(title: "The Tyger", author: "William Blake", text: "Tyger Tyger, burning bright, in the forests of the night."),
-        Poem(title: "Sonnet 18", author: "William Shakespeare", text: "Shall I compare thee to a summer's day? Thou art more lovely and more temperate."),
-        Poem(title: "If", author: "Rudyard Kipling", text: "If you can keep your head when all about you are losing theirs and blaming it on you.")
-    ]
-
+    var poems: [Poem] = []
+    var cancellables = Set<AnyCancellable>()
 
     //MARK: - View controller lifecycle
     override func viewDidLoad(){
@@ -31,10 +21,24 @@ class PoemListViewController: UIViewController, UICollectionViewDataSource, UICo
         setupCollectionView()
         
         navigationController?.navigationBar.prefersLargeTitles = true
-            
-        // Opcjonalnie ustaw, żeby ten widok zawsze korzystał z dużego tytułu
         navigationItem.largeTitleDisplayMode = .always
         
+        
+        
+        ServiceAPI().fetchAllPoemsPublisher()
+                  .sink { completion in
+                      switch completion {
+                      case .finished:
+                          break
+                      case .failure(let error):
+                          print("Błąd pobierania poem: \(error)")
+                          
+                      }
+                  } receiveValue: { [weak self] fetchedPoems in
+                      self?.poems = fetchedPoems
+                      self?.collectionView.reloadData()
+                  }
+                  .store(in: &cancellables)
         
       
     }
