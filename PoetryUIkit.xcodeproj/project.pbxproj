@@ -22,6 +22,7 @@
 		FDDBBE232D5233E700065C65 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBBE222D5233E700065C65 /* CollectionHeaderView.swift */; };
 		FDDBBE262D52453000065C65 /* WikiSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBBE252D52453000065C65 /* WikiSummary.swift */; };
 		FDDBBE282D52454400065C65 /* Poem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBBE272D52454400065C65 /* Poem.swift */; };
+		FDDBBE2A2D53B04F00065C65 /* FavoriteStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBBE292D53B03300065C65 /* FavoriteStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		FDDBBE222D5233E700065C65 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
 		FDDBBE252D52453000065C65 /* WikiSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiSummary.swift; sourceTree = "<group>"; };
 		FDDBBE272D52454400065C65 /* Poem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poem.swift; sourceTree = "<group>"; };
+		FDDBBE292D53B03300065C65 /* FavoriteStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -124,6 +126,7 @@
 		FD7DC0342D4D29B7001E0ED2 /* PoetryUIkit */ = {
 			isa = PBXGroup;
 			children = (
+				FDDBBE292D53B03300065C65 /* FavoriteStorage.swift */,
 				FDDBBE242D52451F00065C65 /* Model */,
 				FD7DC02B2D4D29B7001E0ED2 /* AppDelegate.swift */,
 				FD7DC0322D4D29B7001E0ED2 /* SceneDelegate.swift */,
@@ -334,6 +337,7 @@
 				FDDBBE262D52453000065C65 /* WikiSummary.swift in Sources */,
 				FD7DC0352D4D29B7001E0ED2 /* AppDelegate.swift in Sources */,
 				FD7DC0362D4D29B7001E0ED2 /* SceneDelegate.swift in Sources */,
+				FDDBBE2A2D53B04F00065C65 /* FavoriteStorage.swift in Sources */,
 				FDB52E552D50D1A50066C121 /* PoemCell.swift in Sources */,
 				FDDBBE192D50FBC800065C65 /* ServiceAPI.swift in Sources */,
 				FDDBBE212D522E3500065C65 /* AuthorViewController.swift in Sources */,

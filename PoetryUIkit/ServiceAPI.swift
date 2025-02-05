@@ -14,6 +14,8 @@ struct AuthorsList: Codable {
 
 class ServiceAPI{
     
+    @MainActor static let shared = ServiceAPI()
+    
     //MARK: - PoetryDB
     
     func fetchAllPoemsPublisher() -> AnyPublisher<[Poem], Error> {

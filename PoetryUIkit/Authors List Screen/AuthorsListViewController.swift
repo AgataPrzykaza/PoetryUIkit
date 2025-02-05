@@ -16,6 +16,8 @@ class AuthorsListViewController: UIViewController, UITableViewDataSource, UITabl
     var authors: [String] = []
     var cancellables = Set<AnyCancellable>()
     
+    private let search = UISearchController(searchResultsController: nil)
+    private var filteredAuthors: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +28,14 @@ class AuthorsListViewController: UIViewController, UITableViewDataSource, UITabl
         tableView.rowHeight = 100
         // Do any additional setup after loading the view.
         
-        ServiceAPI().fetchAuthorsPublisher()
+        
+        search.searchResultsUpdater = self
+        search.obscuresBackgroundDuringPresentation = false
+        search.searchBar.placeholder = "Search author"
+        navigationItem.searchController = search
+        
+        
+        ServiceAPI.shared.fetchAuthorsPublisher()
             .sink { completion in
                 switch completion {
                 case .finished:
@@ -43,13 +52,28 @@ class AuthorsListViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        authors.count
+        
+        if search.isActive {
+            return filteredAuthors.count
+        }
+        else{
+            return  authors.count
+        }
+        
+       
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "authorCell", for: indexPath) as! AuthorsListTableViewCell
         
-        let entry = authors[indexPath.row]
+        let entry: String
+        
+        if search.isActive{
+            entry = filteredAuthors[indexPath.row]
+        }
+        else {
+            entry = authors[indexPath.row]
+        }
         
         cell.authorNameLabel.text = entry
         
@@ -76,7 +100,14 @@ class AuthorsListViewController: UIViewController, UITableViewDataSource, UITabl
             fatalError("Could not get indexPath")
         }
         
-        let selectedAuthor = authors[indexPath.row]
+        let selectedAuthor: String
+        
+        if search.isActive{
+            selectedAuthor = filteredAuthors[indexPath.row]
+        }
+        else{
+            selectedAuthor = authors[indexPath.row]
+        }
         detailVC.author = selectedAuthor
         
     }
@@ -85,4 +116,19 @@ class AuthorsListViewController: UIViewController, UITableViewDataSource, UITabl
 
 
 
+}
+
+
+
+extension AuthorsListViewController: UISearchResultsUpdating{
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let searchBarText = searchController.searchBar.text else { return }
+        
+        filteredAuthors = authors.filter { $0.lowercased().contains(searchBarText.lowercased()) }
+        
+        tableView.reloadData()
+        
+    }
+    
 }

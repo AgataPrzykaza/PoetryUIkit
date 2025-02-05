@@ -321,7 +321,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tE2-Bs-dvQ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tE2-Bs-dvQ">
                                                     <rect key="frame" x="16" y="63" width="369" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
@@ -352,6 +352,7 @@
                                             <outlet property="author" destination="7O1-cc-P4C" id="0dr-A8-QHv"/>
                                             <outlet property="text" destination="tE2-Bs-dvQ" id="3jb-kj-Og6"/>
                                             <outlet property="title" destination="TOn-1r-EQr" id="60j-ye-hVL"/>
+                                            <segue destination="9y4-Yb-kyC" kind="show" identifier="authorPoemDetail" id="Lmk-5W-4Ad"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -488,6 +489,9 @@
             <point key="canvasLocation" x="768.70229007633588" y="1634.5070422535211"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Lmk-5W-4Ad"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="heart.fill" catalog="system" width="128" height="107"/>

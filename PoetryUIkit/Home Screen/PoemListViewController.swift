@@ -25,7 +25,7 @@ class PoemListViewController: UIViewController, UICollectionViewDataSource, UICo
         
         
         
-        ServiceAPI().fetchAllPoemsPublisher()
+        ServiceAPI.shared.fetchAllPoemsPublisher()
                   .sink { completion in
                       switch completion {
                       case .finished:
