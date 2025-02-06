@@ -11,6 +11,7 @@ class FavoriteStorage {
     @MainActor static let shared = FavoriteStorage()
     
     let favoriteIDsKey = "favoriteIDs"
+  
 
     //MARK : - UserDefaults
     
@@ -42,6 +43,8 @@ class FavoriteStorage {
     func isFavorite(_ id: String) -> Bool {
         return getFavoriteIDs().contains(id)
     }
+    
+   
     
     
 }

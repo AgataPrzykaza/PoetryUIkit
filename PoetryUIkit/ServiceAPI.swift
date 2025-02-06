@@ -77,6 +77,53 @@ class ServiceAPI{
             .eraseToAnyPublisher()
     }
     
+    
+    func fetchPoemSearch(title: String) -> AnyPublisher<[Poem],Error> {
+        let encodedTitle = title.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        
+        guard let url = URL(string: "https://poetrydb.org/title/\(encodedTitle)/title,author,lines,linecount") else {
+           
+            return Fail(error: URLError(.badURL)).eraseToAnyPublisher()
+        }
+        
+        return URLSession.shared.dataTaskPublisher(for: url)
+            .tryMap { output in
+                guard let httpResponse = output.response as? HTTPURLResponse,
+                      (200...299).contains(httpResponse.statusCode) else {
+                    throw URLError(.badServerResponse)
+                }
+                return output.data
+            }
+            .decode(type: [Poem].self, decoder: JSONDecoder())
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
+    }
+    
+    
+    func fetchPoemFromTitleAuthor(author: String, title: String) -> AnyPublisher<[Poem], Error> {
+        
+        let encodedAuthor = author.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        let encodedTitle = title.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        
+        guard let url = URL(string: "https://poetrydb.org/title,author/\(encodedTitle):abs;\(encodedAuthor)") else {
+           
+            return Fail(error: URLError(.badURL)).eraseToAnyPublisher()
+        }
+        
+        return URLSession.shared.dataTaskPublisher(for: url)
+            .tryMap { output in
+                guard let httpResponse = output.response as? HTTPURLResponse,
+                      (200...299).contains(httpResponse.statusCode) else {
+                    throw URLError(.badServerResponse)
+                }
+                return output.data
+            }
+            .decode(type: [Poem].self, decoder: JSONDecoder())
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
+        
+    }
+    
     //MARK: - WIKIPEDIA
     
     func fetchAuthorSummary(author: String) -> AnyPublisher<WikiSummary,Error> {

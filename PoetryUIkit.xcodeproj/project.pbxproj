@@ -23,6 +23,8 @@
 		FDDBBE262D52453000065C65 /* WikiSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBBE252D52453000065C65 /* WikiSummary.swift */; };
 		FDDBBE282D52454400065C65 /* Poem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBBE272D52454400065C65 /* Poem.swift */; };
 		FDDBBE2A2D53B04F00065C65 /* FavoriteStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBBE292D53B03300065C65 /* FavoriteStorage.swift */; };
+		FDDBBE2D2D54EE2300065C65 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBBE2C2D54EE2300065C65 /* SearchViewController.swift */; };
+		FDDBBE362D55230E00065C65 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDBBE352D55230E00065C65 /* FavoriteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		FDDBBE252D52453000065C65 /* WikiSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiSummary.swift; sourceTree = "<group>"; };
 		FDDBBE272D52454400065C65 /* Poem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poem.swift; sourceTree = "<group>"; };
 		FDDBBE292D53B03300065C65 /* FavoriteStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteStorage.swift; sourceTree = "<group>"; };
+		FDDBBE2C2D54EE2300065C65 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		FDDBBE352D55230E00065C65 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -131,9 +135,11 @@
 				FD7DC02B2D4D29B7001E0ED2 /* AppDelegate.swift */,
 				FD7DC0322D4D29B7001E0ED2 /* SceneDelegate.swift */,
 				FDDBBE182D50FBC800065C65 /* ServiceAPI.swift */,
+				FDDBBE2B2D54EE0600065C65 /* Search Screen */,
 				FD7DC03C2D4D3039001E0ED2 /* Home Screen */,
 				FDDBBE1A2D5225E100065C65 /* Authors List Screen */,
 				FDDBBE152D50EEEF00065C65 /* Poem Detail Screen */,
+				FDDBBE342D5522E100065C65 /* Favorite Screen */,
 				FD7DC0312D4D29B7001E0ED2 /* Main.storyboard */,
 				FD7DC02F2D4D29B7001E0ED2 /* LaunchScreen.storyboard */,
 				FD7DC02C2D4D29B7001E0ED2 /* Assets.xcassets */,
@@ -185,6 +191,22 @@
 				FDDBBE272D52454400065C65 /* Poem.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FDDBBE2B2D54EE0600065C65 /* Search Screen */ = {
+			isa = PBXGroup;
+			children = (
+				FDDBBE2C2D54EE2300065C65 /* SearchViewController.swift */,
+			);
+			path = "Search Screen";
+			sourceTree = "<group>";
+		};
+		FDDBBE342D5522E100065C65 /* Favorite Screen */ = {
+			isa = PBXGroup;
+			children = (
+				FDDBBE352D55230E00065C65 /* FavoriteViewController.swift */,
+			);
+			path = "Favorite Screen";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,10 +357,12 @@
 				FDDBBE232D5233E700065C65 /* CollectionHeaderView.swift in Sources */,
 				FDDBBE1C2D52260800065C65 /* AuthorsListViewController.swift in Sources */,
 				FDDBBE262D52453000065C65 /* WikiSummary.swift in Sources */,
+				FDDBBE362D55230E00065C65 /* FavoriteViewController.swift in Sources */,
 				FD7DC0352D4D29B7001E0ED2 /* AppDelegate.swift in Sources */,
 				FD7DC0362D4D29B7001E0ED2 /* SceneDelegate.swift in Sources */,
 				FDDBBE2A2D53B04F00065C65 /* FavoriteStorage.swift in Sources */,
 				FDB52E552D50D1A50066C121 /* PoemCell.swift in Sources */,
+				FDDBBE2D2D54EE2300065C65 /* SearchViewController.swift in Sources */,
 				FDDBBE192D50FBC800065C65 /* ServiceAPI.swift in Sources */,
 				FDDBBE212D522E3500065C65 /* AuthorViewController.swift in Sources */,
 				FDDBBE1E2D5226ED00065C65 /* AuthorsListTableViewCell.swift in Sources */,

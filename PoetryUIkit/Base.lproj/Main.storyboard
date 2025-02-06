@@ -127,10 +127,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ji8-xy-JEr">
-                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="0.0"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ux5-CR-WPJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1500"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="327.33333333333331"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FzD-rt-Deb">
                                                 <rect key="frame" x="18" y="7.9999999999999982" width="367" height="25.333333333333329"/>
@@ -145,7 +145,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNi-XA-2Ur">
-                                                <rect key="frame" x="18" y="62.333333333333371" width="367" height="1429.6666666666665"/>
+                                                <rect key="frame" x="18" y="62.333333333333343" width="367" height="257"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <color key="textColor" systemColor="labelColor"/>
@@ -198,7 +198,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kix-KN-rv0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3002" y="-1167"/>
+            <point key="canvasLocation" x="4453" y="446"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Lo1-3Q-61L">
@@ -421,18 +421,108 @@
         <!--Search-->
         <scene sceneID="ha9-yG-Stl">
             <objects>
-                <viewController id="bP3-10-Mhi" sceneMemberID="viewController">
+                <viewController id="bP3-10-Mhi" customClass="SearchViewController" customModule="PoetryUIkit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P84-SU-PEF">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search poem..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b2k-4e-VZM">
+                                <rect key="frame" x="10" y="103" width="373" height="34"/>
+                                <color key="backgroundColor" red="0.71041706168223173" green="0.60613014395833964" blue="0.71061959469898994" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0gd-Ti-q7Q">
+                                <rect key="frame" x="0.0" y="147" width="393" height="622"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CC3-1v-JCH">
+                                    <size key="itemSize" width="393" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="poemSearchCell" id="0Ts-zl-lTf" customClass="PoemCell" customModule="PoetryUIkit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="cOD-qT-b5Y">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0k-fd-4C1">
+                                                    <rect key="frame" x="16" y="7.9999999999999982" width="369" height="25.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVH-RG-BTB">
+                                                    <rect key="frame" x="16" y="41.333333333333336" width="369" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lkz-2p-9A9">
+                                                    <rect key="frame" x="16" y="72.333333333333329" width="369" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Lkz-2p-9A9" firstAttribute="top" secondItem="wVH-RG-BTB" secondAttribute="bottom" constant="10" id="47A-rW-Ez7"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Lkz-2p-9A9" secondAttribute="trailing" id="JqC-D9-08u"/>
+                                                <constraint firstItem="G0k-fd-4C1" firstAttribute="leading" secondItem="cOD-qT-b5Y" secondAttribute="leadingMargin" constant="8" id="c5B-WJ-asL"/>
+                                                <constraint firstItem="G0k-fd-4C1" firstAttribute="top" secondItem="cOD-qT-b5Y" secondAttribute="topMargin" id="dLk-JC-9bz"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="wVH-RG-BTB" secondAttribute="trailing" id="daK-ih-Bie"/>
+                                                <constraint firstItem="Lkz-2p-9A9" firstAttribute="leading" secondItem="cOD-qT-b5Y" secondAttribute="leadingMargin" constant="8" id="lkj-sT-81j"/>
+                                                <constraint firstItem="wVH-RG-BTB" firstAttribute="top" secondItem="G0k-fd-4C1" secondAttribute="bottom" constant="8" id="tAC-G6-tmp"/>
+                                                <constraint firstItem="wVH-RG-BTB" firstAttribute="leading" secondItem="cOD-qT-b5Y" secondAttribute="leadingMargin" constant="8" id="wEt-bq-jlV"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="G0k-fd-4C1" secondAttribute="trailing" id="wyz-tZ-gXQ"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" red="0.71061959470000002" green="0.46430394069999997" blue="0.64904068120000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <size key="customSize" width="393" height="150"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="author" destination="wVH-RG-BTB" id="ok8-O5-bsW"/>
+                                            <outlet property="text" destination="Lkz-2p-9A9" id="wN6-cK-hg8"/>
+                                            <outlet property="title" destination="G0k-fd-4C1" id="DtA-dG-HPb"/>
+                                            <segue destination="9y4-Yb-kyC" kind="show" identifier="searchDetail" id="FjU-ol-RI0"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="bP3-10-Mhi" id="Uk5-Xo-IhJ"/>
+                                    <outlet property="delegate" destination="bP3-10-Mhi" id="hdA-ln-m1y"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="cHi-b8-ylv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cHi-b8-ylv" firstAttribute="trailing" secondItem="0gd-Ti-q7Q" secondAttribute="trailing" id="62r-g0-Bb3"/>
+                            <constraint firstItem="b2k-4e-VZM" firstAttribute="top" secondItem="cHi-b8-ylv" secondAttribute="top" id="Cm3-Lm-CgH"/>
+                            <constraint firstItem="0gd-Ti-q7Q" firstAttribute="leading" secondItem="cHi-b8-ylv" secondAttribute="leading" id="Hpq-b6-re6"/>
+                            <constraint firstItem="0gd-Ti-q7Q" firstAttribute="top" secondItem="b2k-4e-VZM" secondAttribute="bottom" constant="10" id="NIK-S0-OK1"/>
+                            <constraint firstItem="cHi-b8-ylv" firstAttribute="trailing" secondItem="b2k-4e-VZM" secondAttribute="trailing" constant="10" id="hfo-vd-79M"/>
+                            <constraint firstItem="cHi-b8-ylv" firstAttribute="bottom" secondItem="0gd-Ti-q7Q" secondAttribute="bottom" id="tVI-Ca-OMr"/>
+                            <constraint firstItem="b2k-4e-VZM" firstAttribute="leading" secondItem="cHi-b8-ylv" secondAttribute="leading" constant="10" id="zqA-rV-FBi"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="sgv-xZ-9eS"/>
+                    <connections>
+                        <outlet property="collectionView" destination="0gd-Ti-q7Q" id="Lq7-SX-LDN"/>
+                        <outlet property="searchTextField" destination="b2k-4e-VZM" id="Vin-f3-nbe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hC3-hR-kF0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1943" y="885"/>
+            <point key="canvasLocation" x="1942.7480916030534" y="884.50704225352115"/>
         </scene>
         <!--Search-->
         <scene sceneID="ojh-Xs-RLT">
@@ -456,18 +546,98 @@
         <!--Favorite-->
         <scene sceneID="SjX-9m-Ccm">
             <objects>
-                <viewController id="v5b-Nt-qOh" sceneMemberID="viewController">
+                <viewController id="v5b-Nt-qOh" customClass="FavoriteViewController" customModule="PoetryUIkit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DIq-u4-cjR">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="H2i-aa-Q4F">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CDg-0O-UU1">
+                                    <size key="itemSize" width="393" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="favoritePoemCell" id="cSk-Ju-wst" customClass="PoemCell" customModule="PoetryUIkit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="qUP-Oa-k4V">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HAS-rC-9W2">
+                                                    <rect key="frame" x="16" y="7.9999999999999982" width="369" height="25.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubt-qG-jv7">
+                                                    <rect key="frame" x="16" y="41.333333333333336" width="369" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8c-Rh-Abq">
+                                                    <rect key="frame" x="16" y="72.333333333333329" width="369" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="HAS-rC-9W2" secondAttribute="trailing" id="2S1-XF-Zlo"/>
+                                                <constraint firstItem="h8c-Rh-Abq" firstAttribute="leading" secondItem="qUP-Oa-k4V" secondAttribute="leadingMargin" constant="8" id="64B-JV-V9Z"/>
+                                                <constraint firstItem="ubt-qG-jv7" firstAttribute="leading" secondItem="qUP-Oa-k4V" secondAttribute="leadingMargin" constant="8" id="HLE-IT-FOt"/>
+                                                <constraint firstItem="HAS-rC-9W2" firstAttribute="top" secondItem="qUP-Oa-k4V" secondAttribute="topMargin" id="JPe-eH-c0E"/>
+                                                <constraint firstItem="HAS-rC-9W2" firstAttribute="leading" secondItem="qUP-Oa-k4V" secondAttribute="leadingMargin" constant="8" id="YOw-lO-apf"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ubt-qG-jv7" secondAttribute="trailing" id="hdY-Ud-8IT"/>
+                                                <constraint firstItem="h8c-Rh-Abq" firstAttribute="top" secondItem="ubt-qG-jv7" secondAttribute="bottom" constant="10" id="q5U-P0-c6M"/>
+                                                <constraint firstItem="ubt-qG-jv7" firstAttribute="top" secondItem="HAS-rC-9W2" secondAttribute="bottom" constant="8" id="swP-lY-n4z"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="h8c-Rh-Abq" secondAttribute="trailing" id="ujR-u2-zFW"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" red="0.71061959470000002" green="0.46430394069999997" blue="0.64904068120000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <size key="customSize" width="393" height="150"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="author" destination="ubt-qG-jv7" id="hLj-eg-evO"/>
+                                            <outlet property="text" destination="h8c-Rh-Abq" id="mce-YO-Cbq"/>
+                                            <outlet property="title" destination="HAS-rC-9W2" id="3br-r4-g3k"/>
+                                            <segue destination="9y4-Yb-kyC" kind="show" identifier="favoritePoemDetail" id="Agf-3d-SHB"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="v5b-Nt-qOh" id="W4k-Yl-Jx4"/>
+                                    <outlet property="delegate" destination="v5b-Nt-qOh" id="kM8-Gy-vXm"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ky9-92-3bJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ky9-92-3bJ" firstAttribute="trailing" secondItem="H2i-aa-Q4F" secondAttribute="trailing" id="3Nn-C7-Lj2"/>
+                            <constraint firstItem="ky9-92-3bJ" firstAttribute="bottom" secondItem="H2i-aa-Q4F" secondAttribute="bottom" id="AbC-IG-u7n"/>
+                            <constraint firstItem="H2i-aa-Q4F" firstAttribute="top" secondItem="ky9-92-3bJ" secondAttribute="top" id="Ivf-En-ZOt"/>
+                            <constraint firstItem="H2i-aa-Q4F" firstAttribute="leading" secondItem="ky9-92-3bJ" secondAttribute="leading" id="J4m-5S-QKR"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Favorite" id="H4b-AM-9OR"/>
+                    <connections>
+                        <outlet property="collectionView" destination="H2i-aa-Q4F" id="0Lh-ti-QTB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KBh-HV-B65" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1943" y="1635"/>
+            <point key="canvasLocation" x="1942.7480916030534" y="1634.5070422535211"/>
         </scene>
         <!--Favorite-->
         <scene sceneID="eY0-vK-EwD">
@@ -490,7 +660,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Lmk-5W-4Ad"/>
+        <segue reference="FjU-ol-RI0"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="ellipsis" catalog="system" width="128" height="37"/>

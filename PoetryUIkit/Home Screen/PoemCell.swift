@@ -9,9 +9,9 @@ import UIKit
 
 class PoemCell: UICollectionViewCell {
     
-    @IBOutlet  var title: UILabel!
-    @IBOutlet  var author: UILabel!
-    @IBOutlet var text: UILabel!
+    @IBOutlet  weak var title: UILabel!
+    @IBOutlet  weak var author: UILabel!
+    @IBOutlet weak var text: UILabel!
     
 
     
